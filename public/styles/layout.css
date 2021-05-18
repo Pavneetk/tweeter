@@ -15,7 +15,7 @@ html {
  */
 
 body {
-  background-color: #545149;
+  background-color: #E1C699;
   color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
@@ -23,7 +23,7 @@ body {
 
 main {
   display: flex;
-  background-color: #545149;
+  background-color: #E1C699;
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
