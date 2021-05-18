@@ -9,19 +9,51 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Bungee Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <!-- Source Sans Pro 300 Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Source Sans Pro 300I Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+    <!-- Source Sans Pro 600 Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- Source Sans Pro 600I Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/39d9cd885c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="title"><span>Tweeter App</span></div>
+      
+      <div class="newTweet"><span><b>Write</b>&nbspa new tweet</span>
+      <div class="arrow"><i class="fas fa-angle-double-down"></i></div>
+       </div>
     </nav>
+    <header>
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2><b>Your</b> Name</h2>
+      </div>
+  </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container"></main>

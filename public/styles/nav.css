@@ -1,0 +1,57 @@
+
+
+nav {
+  display: flex;
+  align-content: baseline;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+}
+
+.title {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  font-family: 'Bungee', sans-serif;
+  align-self: center;
+}
+
+.newTweet {
+  display: flex;
+  align-self: center;
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  flex-direction: column;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+ 
+}
+
+.arrow {
+  color: red;
+  
+  
+  margin: 0 auto;
+  padding: 3px;
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top:125px;
+  height:400x;
+  width:100%;
+  position: relative;
+  background-color: #5c679e;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+}
+h2 {
+  font-variant: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
+}
