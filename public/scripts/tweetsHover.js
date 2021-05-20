@@ -1,27 +1,19 @@
 $(document).ready(function () {
   // --- our code goes here ---
 
-  $("section.tweets").hover(function () {
+$("main.container").on('mouseover','section.tweets',function () {
+  $(this).css({"box-shadow" : "6px 6px grey"}); 
+});
+$("main.container").on('mouseout','section.tweets',function () {
+  $(this).css({"box-shadow" : "0px 0px"}); 
+});
 
-    $(this).css({"box-shadow" : "6px 6px grey"});
-
-  }, function () {
-
-    $(this).css({"box-shadow" : "0px 0px"});
-
-
-  });
-  $("footer.tweets i").hover(function () {
-
-    $(this).css({"color" : "orange"});
-
-  }, function () {
-
-    $(this).css({"color" : "#4056A1"});
-
-  });
-
-
+$("main.container").on('mouseover',"footer.tweets i",function () {
+  $(this).css({"color" : "orange"});
+});
+$("main.container").on('mouseout',"footer.tweets i",function () {
+  $(this).css({"color" : "#4056A1"});
+});
 
 
 
