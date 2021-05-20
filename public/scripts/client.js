@@ -71,6 +71,19 @@ tweetsData.forEach(element => {
 
 renderTweets(data);
 
+$("form").submit(function(event){
+  event.preventDefault()
+  console.log($(this).children("textarea").serialize());
+  $.ajax({
+    url: "/tweets",
+    method: "POST" ,
+    data: $(this).children("textarea").serialize(),
+    success: console.log("success"),
+  });
+
+
+
+});
 
 
 
