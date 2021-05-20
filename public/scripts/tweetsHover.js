@@ -21,10 +21,6 @@ $(document).ready(function () {
 
   });
 
-  // $(this).siblings(".buttonCount").children(".counter").css({"color" : "red"});
-
-
-
 
 
 
