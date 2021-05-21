@@ -59,17 +59,23 @@ $(document).ready(function () {
       url: "/tweets",
       method: "GET",
     }).then((result) => {
-      console.log(result);
       const $tweet = createTweetElement(result[result.length-1]);
       $('main.container').append($tweet);
     })
 
 
   }
-
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   $("form").submit(function (event) {
     event.preventDefault()
+    let text = $(this).children("textarea").val();
+    let safeHTML = escape(text);
+    console.log(safeHTML);
     
     if($(this).children("textarea").val().length > 140) {
       alert("Message exceeds character limit!");
@@ -79,7 +85,7 @@ $(document).ready(function () {
      $.ajax({
        url: "/tweets",
        method: "POST",
-       data: $(this).children("textarea").serialize(),
+       data: `text=${safeHTML}`,
        
      }).then(() => {
        addNewTweet();
