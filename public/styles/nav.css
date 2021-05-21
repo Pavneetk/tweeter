@@ -4,7 +4,6 @@ nav {
   align-content: baseline;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
   color: #FFFFFF;
   justify-content: space-between;
   position: fixed;
@@ -25,7 +24,6 @@ nav {
   flex-direction: column;
   margin-left: 1.5em;
   margin-right: 1.5em;
- 
 }
 
 .arrow {

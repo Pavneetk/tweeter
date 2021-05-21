@@ -50,6 +50,7 @@ div.topMain{
     padding: 1em;
     width:300px;
     height:500px;
+    position: fixed;
   }
   header.body img {
     margin-bottom: -10px;
@@ -61,6 +62,8 @@ div.topMain{
   nav {
     display:flex;
     align-self:flex-start;
+    height: 120px;
+    background-color: #4056A1;
   }
   main{
     margin-top: 120px;
