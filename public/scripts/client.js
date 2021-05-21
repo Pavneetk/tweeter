@@ -73,14 +73,17 @@ $(document).ready(function () {
 
   $("form").submit(function (event) {
     event.preventDefault()
+    $("div.error").css({"display":"none"});
     let text = $(this).children("textarea").val();
     let safeHTML = escape(text);
-    console.log(safeHTML);
+  
     
     if($(this).children("textarea").val().length > 140) {
-      alert("Message exceeds character limit!");
+      $("div.error").css({"display":"flex"});
+      $("div.error span").text("Message exceeds character limit!");
     } else if($(this).children("textarea").val() === "") {
-      alert("Message is empty!")
+      $("div.error").css({"display":"flex"});
+      $("div.error span").text("Message is empty!");
     } else {
      $.ajax({
        url: "/tweets",
@@ -88,7 +91,10 @@ $(document).ready(function () {
        data: `text=${safeHTML}`,
        
      }).then(() => {
+       $("section.new-tweet textarea").val("");
+       $("section.new-tweet textarea").siblings(".buttonCount").children(".counter").val(140);
        addNewTweet();
+       
      });
      
     }

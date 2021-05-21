@@ -33,6 +33,7 @@ main {
 
 div.topMain{
   display:flex;
+  flex-direction:column;
   order:1;
 }
 
