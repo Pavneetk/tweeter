@@ -52,8 +52,20 @@ $(document).ready(function () {
     })
   };
 
-loadData();
+  loadData();
 
+  function addNewTweet() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+    }).then((result) => {
+      console.log(result);
+      const $tweet = createTweetElement(result[result.length-1]);
+      $('main.container').append($tweet);
+    })
+
+
+  }
 
 
   $("form").submit(function (event) {
@@ -68,7 +80,11 @@ loadData();
        url: "/tweets",
        method: "POST",
        data: $(this).children("textarea").serialize(),
+       
+     }).then(() => {
+       addNewTweet();
      });
+     
     }
 
   });

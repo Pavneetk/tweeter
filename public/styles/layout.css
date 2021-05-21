@@ -27,9 +27,16 @@ main {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
-  flex-direction: column;
+  flex-direction: column-reverse;
   color:white;
 }
+
+div.topMain{
+  display:flex;
+  order:1;
+}
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
