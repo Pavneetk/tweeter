@@ -1,5 +1,4 @@
 
-
 nav {
   display: flex;
   align-content: baseline;
@@ -22,7 +21,6 @@ nav {
 .newTweet {
   display: flex;
   align-self: center;
-  
   font-family: 'Source Sans Pro', sans-serif;
   flex-direction: column;
   margin-left: 1.5em;
@@ -32,8 +30,6 @@ nav {
 
 .arrow {
   color: red;
-  
-  
   margin: 0 auto;
   padding: 3px;
 }

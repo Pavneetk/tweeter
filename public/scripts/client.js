@@ -5,7 +5,7 @@
  */
 $(document).ready(function () {
 
-
+  //returns full HTML structure a single tweet box
   function createTweetElement(tweetData) {
     return $(`
       <section class="tweets">
@@ -31,9 +31,10 @@ $(document).ready(function () {
         </article>
       </section>
 
-    `)};
+    `)
+  };
 
-
+  //loop through each obj element in the array and add the returned HTML structure to the main container
   function renderTweets(tweetsData) {
 
     tweetsData.forEach(element => {
@@ -42,61 +43,68 @@ $(document).ready(function () {
     });
 
   }
-  
+
+  //ajax get request to server returns tweets data and call rendertweets functiong with it
   function loadData() {
     $.ajax({
       url: "/tweets",
       method: "GET",
     }).then((result) => {
-    renderTweets(result);
+      renderTweets(result);
     })
   };
 
+  //initiates tweet data loading on page load
   loadData();
 
+
+  //adds newly created tweets to main container using ajax get request and only added the last element to the page
   function addNewTweet() {
     $.ajax({
       url: "/tweets",
       method: "GET",
     }).then((result) => {
-      const $tweet = createTweetElement(result[result.length-1]);
+      const $tweet = createTweetElement(result[result.length - 1]);
       $('main.container').append($tweet);
     })
 
 
   }
+  //returns safeHTML code
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+
+  //ajax event handler for tweet submit button
   $("form").submit(function (event) {
     event.preventDefault()
-    $("div.error").css({"display":"none"});
+    $("div.error").css({ "display": "none" });
     let text = $(this).children("textarea").val();
     let safeHTML = escape(text);
-  
-    
-    if($(this).children("textarea").val().length > 140) {
-      $("div.error").css({"display":"flex"});
+
+      //message validating before ajax request
+    if ($(this).children("textarea").val().length > 140) {
+      $("div.error").css({ "display": "flex" });
       $("div.error span").text("Message exceeds character limit!");
-    } else if($(this).children("textarea").val() === "") {
-      $("div.error").css({"display":"flex"});
+    } else if ($(this).children("textarea").val() === "") {
+      $("div.error").css({ "display": "flex" });
       $("div.error span").text("Message is empty!");
     } else {
-     $.ajax({
-       url: "/tweets",
-       method: "POST",
-       data: `text=${safeHTML}`,
-       
-     }).then(() => {
-       $("section.new-tweet textarea").val("");
-       $("section.new-tweet textarea").siblings(".buttonCount").children(".counter").val(140);
-       addNewTweet();
-       
-     });
-     
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: `text=${safeHTML}`,
+
+      }).then(() => {//once new message is added to the database, clear message field, reset counter and add the newly created tweet to the main container
+        $("section.new-tweet textarea").val("");
+        $("section.new-tweet textarea").siblings(".buttonCount").children(".counter").val(140);
+        addNewTweet();
+
+      });
+
     }
 
   });

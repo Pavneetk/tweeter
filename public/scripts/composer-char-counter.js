@@ -13,9 +13,5 @@ $(document).ready(function () {
     $(this).siblings(".buttonCount").children(".counter").val(charCount);
   });
 
-
-
-
-
 });
 

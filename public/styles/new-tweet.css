@@ -1,3 +1,4 @@
+
 .new-tweet{
   display:flex;
   width:100%;
@@ -31,8 +32,7 @@ textarea {
   background-color: #E1C699;
   border: 0px;
   border-bottom:3px solid black;
-  margin-top: 5px;
-  
+  margin-top: 5px; 
   resize: none;
 }
 
@@ -46,5 +46,4 @@ div.error {
   border: 3px solid red;
   padding: 5px;
   margin-top: 5px;
-  
 }
