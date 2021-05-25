@@ -14,7 +14,7 @@
 
 button {
   font-family: 'Bungee', sans-serif;;
-  color: white;
+  color:#FFFFFF;
   background-color: #4056A1;
 }
 
@@ -41,8 +41,8 @@ div.error {
   justify-content: space-between;
   height: auto;
   width: 100%;
-  color: red;
-  border: 3px solid red;
+  color:	#FF0000;
+  border: 3px solid 	#FF0000;
   padding: 5px;
   margin-top: 5px;
 }

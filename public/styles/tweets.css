@@ -6,7 +6,7 @@ section.tweets {
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Source Sans Pro', sans-serif;
-  color: black;
+  color: #000000;
   border: 3px solid #000000
 }
 
@@ -44,7 +44,7 @@ section.tweets footer{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-top: 3px solid black;
+  border-top: 3px solid #000000;
   font-size: 75%;
 }
 
